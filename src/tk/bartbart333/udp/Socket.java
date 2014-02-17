@@ -1,5 +1,6 @@
 package tk.bartbart333.udp;
 
+import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
@@ -28,6 +29,9 @@ public class Socket extends Thread{
 	}
 	
 	public void run(){
+		byte[] data = new byte[1024 * 16];
+		DatagramPacket datapacket = new DatagramPacket(data, data.length);
+		
 		while(running){
 			
 		}
