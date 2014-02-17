@@ -6,6 +6,7 @@ import java.net.SocketException;
 public class Socket extends Thread{
 	
 	private DatagramSocket datasocket;
+	private boolean running = true;
 	
 	public Socket() throws SocketException{
 		datasocket = new DatagramSocket();
@@ -13,7 +14,15 @@ public class Socket extends Thread{
 		this.start();
 	}
 	
+	public void close(){
+		running = false;
+	}
+	
 	public void run(){
+		while(running){
+			
+		}
 		
+		return;
 	}
 }
