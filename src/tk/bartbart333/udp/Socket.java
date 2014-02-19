@@ -27,6 +27,12 @@ public class Socket extends Thread{
 		return datasocket.getLocalPort();
 	}
 	
+	public void send(Connection connection, Packet packet) throws IOException{
+		DatagramPacket datapacket = new DatagramPacket(packet.getData(), packet.getData().length, connection.getAddress(), connection.getPort());
+		
+		datasocket.send(datapacket);
+	}
+	
 	public void close(){
 		running = false;
 	}
