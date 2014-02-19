@@ -8,6 +8,7 @@ public class Connection extends Thread{
 	private ArrayList<Packet> packets = new ArrayList<Packet>();
 	private InetAddress ip;
 	private int port;
+	private boolean running = true;
 	
 	public Connection(InetAddress ip, int port){
 		this.ip = ip;
@@ -27,7 +28,15 @@ public class Connection extends Thread{
 		packets.add(packet);
 	}
 	
+	public void close(){
+		running = false;
+	}
+	
 	public void run(){
+		while(running){
+			
+		}
 		
+		return;
 	}
 }
