@@ -1,9 +1,11 @@
 package tk.bartbart333.udp;
 
 import java.net.InetAddress;
+import java.util.ArrayList;
 
 public class Connection extends Thread{
 	
+	private ArrayList<Packet> packets = new ArrayList<Packet>();
 	private InetAddress ip;
 	private int port;
 	
@@ -19,6 +21,10 @@ public class Connection extends Thread{
 	
 	public int getPort(){
 		return port;
+	}
+	
+	public void addPacket(Packet packet){
+		packets.add(packet);
 	}
 	
 	public void run(){
