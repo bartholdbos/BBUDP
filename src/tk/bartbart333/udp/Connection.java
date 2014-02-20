@@ -14,7 +14,7 @@ public abstract class Connection extends Thread{
 	
 	protected abstract void receive(Packet packet);
 	
-	public Connection(InetAddress ip, int port){
+	protected Connection(InetAddress ip, int port){
 		this.ip = ip;
 		this.port = port;
 		this.start();
