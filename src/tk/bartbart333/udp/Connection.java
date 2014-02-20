@@ -3,12 +3,16 @@ package tk.bartbart333.udp;
 import java.net.InetAddress;
 import java.util.ArrayList;
 
-public class Connection extends Thread{
+public abstract class Connection extends Thread{
 	
 	private ArrayList<Packet> packets = new ArrayList<Packet>();
 	private InetAddress ip;
 	private int port;
 	private boolean running = true;
+	
+	protected abstract void connect();
+	
+	protected abstract void receive(Packet packet);
 	
 	public Connection(InetAddress ip, int port){
 		this.ip = ip;
